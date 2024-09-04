@@ -4,7 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour
+
+    
 {
+    [Header("Score Text")]
+    public Text scoreText;
+    private float topScore = 0.0f;
 
     public Rigidbody2D rb;
 
@@ -26,7 +31,15 @@ public class PlayerControls : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        
+        if (rb.velocity.y > 0 && transform.position.y > topScore)
+        {
+            
+        topScore = transform.position.y;
+        }
+
+        scoreText.text = "Score: " + Mathf.Round(topScore).ToString();
         movement = Input.GetAxis("Horizontal") * movementSpeed;
 
         if (movement < 0)

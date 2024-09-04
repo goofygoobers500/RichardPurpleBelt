@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
+    [Header("Game Over UI Canvas Object")]
+    public GameObject gameOVerCanvas;
 
     public GameObject platform;
 
@@ -29,4 +31,13 @@ void SpawnPlatforms()
         Instantiate(platform, new Vector3(Random.value * 10 - 5f, pos, 0.5f), Quaternion.identity);
         pos += 2.5f;
     }
+    public void GameOver()
+    {
+
+
+        gameOVerCanvas.SetActive(true); 
+    }
+
+
 }
+
