@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
+    // I was grading your project and I had to fix some errors so I could run the game, but dw I put the errors back
+    // Hint: Even though you created a new script, two scripts can't share the same namespace, that's the thing before
+    // the : MonoBehaviour
+    // - Sensei Tim
     [Header("Game Over UI Canvas Object")]
     public GameObject gameOVerCanvas;
 

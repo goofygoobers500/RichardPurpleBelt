@@ -76,6 +76,8 @@ void FixedUpdate()
 
 
     private void OnCollisionEnter2D(Collision2D collision)
+
+
     {
 
         rb.velocity = new Vector3(rb.velocity.x, downSpeed, 0);
