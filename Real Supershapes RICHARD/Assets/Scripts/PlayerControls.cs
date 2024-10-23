@@ -37,6 +37,7 @@ public float moveSpeed = 600f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("hi");
         GameObject.Find("GameController").GetComponent<GameController>().GameOver();
     }
 }
