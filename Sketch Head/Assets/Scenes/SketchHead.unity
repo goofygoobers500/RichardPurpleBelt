@@ -185,7 +185,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 1
-  m_UsedByComposite: 1
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 281928527}
   - component: {fileID: 281928526}
   - component: {fileID: 281928525}
+  - component: {fileID: 281928530}
   m_Layer: 0
   m_Name: FakePlatform
   m_TagString: Untagged
@@ -297,9 +298,9 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_UsedByComposite: 1
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,6 +378,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &281928530
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281928524}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &282167418
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,12 +688,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4d7ca8a97b60eb46a78919c26938c2a, type: 3}
---- !u!1 &711939182 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 430678208282896361, guid: f4d7ca8a97b60eb46a78919c26938c2a,
-    type: 3}
-  m_PrefabInstance: {fileID: 657976014}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1099214591
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076bff893bad6e6429485a8c11bc2f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOVerCanvas: {fileID: 711939182}
+  gameOverCanvas: {fileID: 0}
   platform: {fileID: 281928524}
 --- !u!4 &1099214593
 Transform:
@@ -730,7 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076bff893bad6e6429485a8c11bc2f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOVerCanvas: {fileID: 711939182}
+  gameOverCanvas: {fileID: 0}
   platform: {fileID: 80923387}
 --- !u!114 &1296207694 stripped
 MonoBehaviour:
@@ -843,7 +859,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!212 &1604428327
 SpriteRenderer:
@@ -1072,7 +1088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076bff893bad6e6429485a8c11bc2f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOVerCanvas: {fileID: 711939182}
+  gameOverCanvas: {fileID: 0}
   platform: {fileID: 281928524}
 --- !u!4 &1698221366
 Transform:
