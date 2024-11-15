@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour {
+public class FakeGameController : MonoBehaviour {
     [Header("Game Over UI Canvas Object")]
     public GameObject gameOVerCanvas;
 
@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour {
     void Start()
     
     {
-        for(int i = 0; i < 100; i++)
+        for(int i = 0; i < 1000; i++)
         SpawnPlatforms();
     }
 
