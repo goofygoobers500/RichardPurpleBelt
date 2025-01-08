@@ -5,8 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
   
-    public class Spawner : MonoBehaviour
-    {
+    
         public GameObject bombPrefab;
         public float delay = 2.0f;
         public bool active = true;
@@ -15,13 +14,17 @@ public class Spawner : MonoBehaviour
         private Vector2 screenBounds;
         private float objectWidth;
         private float objectHeight;
-    }
+    
     
     // Start is called before the first frame update
     void Start()
     {
         ResetDelay();
         StartCoroutine(EnemyGenerator());
+
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.height, Camera.main.transform.position.z));
+        objectHeight = bombPrefab.GetComponent<MeshRenderer>().bounds.size.x / 2;
+        objectWidth = bombPrefab.GetComponent<MeshRenderer>().bounds.size.y / 2;
     }
 
 
@@ -30,7 +33,10 @@ public class Spawner : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (active)
         {
-            Instantiate(bombPrefab, new Vector3(randomX, spawnY, 0), bombPrefab.trasnform.rotation);
+            float randomX = Random.Range(screenBounds.x - objectWidth, screenBounds.x * -1 + objectWidth);
+            float spawnY = (screenBounds.y + objectHeight) + 5;
+
+            Instantiate(bombPrefab, new Vector3(randomX, spawnY, 0), bombPrefab.transform.rotation);
             ResetDelay();
         }
 
@@ -47,6 +53,6 @@ public class Spawner : MonoBehaviour
 
     void ResetDelay()
     {
-        ResetDelay = Random.Range(delayRange.x, delayRange.y);
+        delay = Random.Range(delayRange.x, delayRange.y);
     }
 }
