@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
         if (active)
         {
             float randomX = Random.Range(screenBounds.x - objectWidth, screenBounds.x * -1 + objectWidth);
-            float spawnY = (screenBounds.y + objectHeight) + 5;
+            float spawnY = (screenBounds.y + objectHeight) + 10;
 
             Instantiate(bombPrefab, new Vector3(randomX, spawnY, 0), bombPrefab.transform.rotation);
             ResetDelay();
