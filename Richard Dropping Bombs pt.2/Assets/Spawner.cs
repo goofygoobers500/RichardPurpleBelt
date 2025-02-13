@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
         ResetDelay();
         StartCoroutine(EnemyGenerator());
 
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.height, Camera.main.transform.position.z));
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3( Screen.width, Screen.height, Camera.main.transform.position.z));
         objectHeight = bombPrefab.GetComponent<MeshRenderer>().bounds.size.x / 2;
         objectWidth = bombPrefab.GetComponent<MeshRenderer>().bounds.size.y / 2;
     }
@@ -34,6 +34,7 @@ public class Spawner : MonoBehaviour
         if (active)
         {
             float randomX = Random.Range(screenBounds.x - objectWidth, screenBounds.x * -1 + objectWidth);
+            Debug.Log(randomX);
             float spawnY = (screenBounds.y + objectHeight) + 10;
 
             Instantiate(bombPrefab, new Vector3(randomX, spawnY, 0), bombPrefab.transform.rotation);
