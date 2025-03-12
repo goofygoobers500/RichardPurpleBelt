@@ -23,9 +23,10 @@ public class GameManager : MonoBehaviour
     private int score;
 
     private int bestScore = 0;
-    public TMP_Text bestScoreText;
+    public Text bestScoreText;
     private bool beatBestScore;
-
+    public Color normalColor;
+    public Color besScoreColor;
 
     private bool smokeCleared = true;
     private void Awake()
@@ -98,13 +99,15 @@ Debug.Log(score);
 
     void ResetGame()
     {
+        bestScoreText.color = normalColor;
         spawner.active = true;
         title.SetActive(false);
 
         splash.SetActive(false);
-
-        scoreText.enabled = true;
         score = 0;
+        scoreText.enabled = true;
+        scoreText.text = "Score: 0";
+        
 
         beatBestScore = false;
         bestScoreText.enabled = true;
@@ -122,15 +125,14 @@ Debug.Log(score);
 
         splash.SetActive(true);
 
-        Invoke("SPlashScreen", 2);
+        Invoke("SplashScreen", 2);
          if(score > bestScore)
             {
+            bestScoreText.color = besScoreColor;
             bestScore = score;
             PlayerPrefs.SetInt("BestScore", bestScore);
             beatBestScore = true;
             bestScoreText.text = "Best Score: " + bestScore.ToString();
         }
-
-
     }
 }
